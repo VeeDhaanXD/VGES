@@ -292,7 +292,7 @@ function QuizList({ onSelectQuiz }) {
     const fetchMyQuizzes = async () => {
       try {
         const token = localStorage.getItem('teacherToken');
-        const res = await axios.get('http://localhost:5000/api/quiz/my-quizzes', {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/quiz/my-quizzes`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         setMyQuizzes(res.data.quizzes);
