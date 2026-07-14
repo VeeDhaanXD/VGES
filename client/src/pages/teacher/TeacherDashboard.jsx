@@ -122,7 +122,7 @@ function QuizBuilder() {
 
       // 4. Send the POST request to Node.js
       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      const res = await axios.post('${API_URL}/api/quiz/create', payload, {
+      const res = await axios.post(`${API_URL}/api/quiz/create`, payload, {
         headers: {
           'Authorization': `Bearer ${token}` // Secure the route
         }
