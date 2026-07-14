@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ["https://your-future-vercel-url.vercel.app"], // You will add the real URL here later
+  oorigin: ["http://localhost:5173", "https://vges.onrender.com/"],
   credentials: true
 }));
 app.use(express.json());
