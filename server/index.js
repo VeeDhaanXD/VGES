@@ -12,17 +12,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: (origin, callback) => {
-    // Allow local development, your production URL, and any Vercel preview generated URLs
-    if (!origin || origin.endsWith('.vercel.app') || origin === 'http://localhost:5173') {
-      callback(null, true);
-    } else {
-      callback(new Error('CORS Policy Violation'));
-    }
-  },
-  credentials: true,
-  optionsSuccessStatus: 200
+  origin: ["https://vges.vercel.app", "http://localhost:5173"], // Strictly your Vercel and Local URLs
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Explicitly allow OPTIONS
+  credentials: true
 }));
+app.options('*', cors());
+
 app.use(express.json());
 app.use('/api/student', studentRoutes);
 app.use('/api/results', resultRoutes);
