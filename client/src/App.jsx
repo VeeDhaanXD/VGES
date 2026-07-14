@@ -40,7 +40,7 @@ export default function App() {
                 >
                   {/* School Logo */}
                   <img 
-                    src="/logo.png" 
+                    src="/logo.webp" 
                     alt="Vidhyasagar Gurukul Logo" 
                     className="w-32 h-32 md:w-40 md:h-40 object-contain mb-6 drop-shadow-2xl bg-white rounded-full p-2"
                     onError={(e) => e.target.style.display = 'none'} // Hides if logo.png name is wrong
