@@ -12,7 +12,7 @@ export default function TeacherLogin() {
     try {
       // 2. Hit your backend login route
       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      const res = await axios.post('${API_URL}/api/teacher/login', formData);
+      const res = await axios.post(`${API_URL}/api/teacher/login`, formData);
       
       if (res.data.success) {
         // 3. Save the token to local storage
